@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Name: MyString
+  QuantityOnHand: 1
+  Price: 1.5
+  CategoryID: 1.5
+  VendorID: 1
+
+two:
+  Name: MyString
+  QuantityOnHand: 1
+  Price: 1.5
+  CategoryID: 1.5
+  VendorID: 1

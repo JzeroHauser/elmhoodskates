@@ -1,0 +1,48 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#wrapper
+{
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 1em;
+
+	header, footer
+	{
+		width: 100%;
+	}
+
+	header
+	{
+		overflow: auto;
+		img, h1
+		{
+			float: left;
+		}
+	}
+
+	section, aside
+	{
+		float: left;
+	}
+
+	section 
+	{
+		width: 70%;
+		background: #ff2222;
+	}
+
+	aside
+	{
+		width: 30%;
+		background: #22ff22;
+	}
+
+	footer
+	{
+		clear:both;
+		background: blue;
+	}
+}
