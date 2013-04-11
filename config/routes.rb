@@ -1,13 +1,15 @@
 Elmhoodskates::Application.routes.draw do
-  get "home/index"
+  get "shop/index"
 
+  root :to => 'shop#index'
+  
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match "admin" => "admin/dashboard#index", :as => 'admin'
 
-  root :to => 'home#index'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
