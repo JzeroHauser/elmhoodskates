@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411132152) do
+ActiveRecord::Schema.define(:version => 20130411142452) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(:version => 20130411132152) do
     t.string   "Name"
     t.integer  "QuantityOnHand"
     t.float    "Price"
-    t.float    "CategoryID"
-    t.integer  "VendorID"
+    t.float    "category_id"
+    t.integer  "vendor_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
