@@ -20,6 +20,19 @@
       %section
         = yield 
       %aside
-        = link_to 'Active Admin', "/admin" 		
+        = link_to 'Active Admin', "/admin" 	
+        %h3 Shopping Cart
+        %ul
+          - if session[:shopping_cart].nil?
+            %li No items
+          - else
+            - total = 0
+            - session[:shopping_cart].goods.each do |boom|
+              %li
+                %b
+                  = boom[1]
+                = Product.find(boom[0]).name
+            / %li
+            /   = link_to "Checkout", checkout_path	
       %footer
         %p Placeholder footer.
