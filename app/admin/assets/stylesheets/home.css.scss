@@ -1,0 +1,79 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face 
+{
+    font-family: 'Armata';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Armata'), local('Armata-Regular'), url(http://themes.googleusercontent.com/static/fonts/armata/v3/FG9R9aX-RIX_AvJI8USOWg.woff) format('woff');
+}
+
+body
+{
+	background-color: grey;
+}
+
+#wrapper
+{
+	font-family: Armata;
+	width: 800px;
+	margin: 0 auto;
+	border-radius: 3px 3px 3px 3px;
+    box-shadow: 5px 5px 6px #222222;
+	padding: 1em;
+	background-color: white;
+
+	#banner img 
+	{
+	    -webkit-transition: -webkit-transform 0.5s ease-out;
+	    -moz-transition: -moz-transform 0.5s ease-out;
+	    transition: transform 0.5s ease-out;
+	}
+	
+	#banner img:hover 
+	{
+	    -webkit-transform: rotateZ(360deg);
+	    -moz-transform: rotateZ(360deg);
+	    transform: rotateZ(360deg);
+	}
+	
+	header, footer
+	{
+		width: 100%;
+	}
+
+	header
+	{
+		overflow: auto;
+		img, h1
+		{
+			float: left;
+		}
+	}
+
+	section, aside
+	{
+		float: left;
+	}
+
+	section 
+	{
+		width: 70%;
+		background: #ff2222;
+	}
+
+	aside
+	{
+		width: 30%;
+		background: #22ff22;
+		height: 100%;
+	}
+
+	footer
+	{
+		clear:both;
+		background: blue;
+	}
+}
