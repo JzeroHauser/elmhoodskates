@@ -5,4 +5,4 @@
   - if product.quantity_on_hand < 1 
     Out of stock
   - else
-    = link_to "put in cart", purchase_path(id: product), :method=> :post
+    = link_to "put in cart", purchase_path(id: product, :q => '1'), :method=> :post
