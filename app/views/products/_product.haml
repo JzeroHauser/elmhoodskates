@@ -1,9 +1,12 @@
 %li
-  %b= product.name
-  = " $#{product.price}"
-  \| 
-  - if product.quantity_on_hand == 0 
-    Out of stock
-  - else
-    = link_to "put in cart", purchase_path(id: product, :q => '1'), :method=> :post
+  %fieldset
+    %b= product.name
+    = " $#{product.price}"
+    %br
+    = product.category.name
+    %br 
+    - if product.quantity_on_hand == 0 
+      Out of stock
+    - else
+      = link_to "put in cart", purchase_path(id: product, :q => '1'), :method=> :post
   

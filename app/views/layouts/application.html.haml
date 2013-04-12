@@ -23,29 +23,7 @@
       %section
         = yield 
       %aside
-        = link_to 'Active Admin', "/admin" 	
-        %h3 Shopping Cart
-        %ul
-          - if session[:shopping_cart].nil?
-            %li Add an item!
-          - else
-            - items = false
-            - session[:shopping_cart].goods.each do |test|
-              - unless test[0].nil?
-                - items = true
-              - else
-                - items = false
-            - unless items
-              %li No items!
-            - else
-              - session[:shopping_cart].goods.each do |boom|
-                %li
-                  %b
-                    = boom[1]
-                  = Product.find(boom[0]).name
-                  %br
-                  = link_to "remove from cart", cancel_path(id: boom[0]), :method=> :post
-            / %li
-            /   = link_to "Checkout", checkout_path	
+        = link_to 'Active Admin', "/admin" 
+        = render 'cart'	
       %footer
         %p Placeholder footer.
