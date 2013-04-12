@@ -1,0 +1,6 @@
+%h1= @category.name
+%ul
+  - if @products.empty?
+    %li None available
+  - else
+    = render @products

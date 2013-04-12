@@ -18,6 +18,9 @@
           = image_tag "facebook.gif"  
           = image_tag "youtube.gif" 
       %section
+        = render 'form'
+        = link_to "Show all products", :root
+      %section
         = yield 
       %aside
         = link_to 'Active Admin', "/admin" 	

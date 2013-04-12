@@ -6,6 +6,9 @@ Elmhoodskates::Application.routes.draw do
   root :to => 'shop#index'
   match "order/purchase" => "order#purchase", as: :purchase
   match "order/cancel" => "order#cancel", as: :cancel
+ # match "shop/category/:id" => "shop#categories", as: :categories
+  match "shop/category" => "shop#categories", as: :category, via: :post
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

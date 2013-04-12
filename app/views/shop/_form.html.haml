@@ -1,0 +1,3 @@
+= form_tag category_path, :method => :post do 
+  = select_tag 'category', options_from_collection_for_select(Category.all, :id, :name)
+  = submit_tag("Show")
