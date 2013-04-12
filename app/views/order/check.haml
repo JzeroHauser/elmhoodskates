@@ -1,0 +1,19 @@
+%h1 Purchase Review
+%ul
+  -@goods.each do |good|
+    - item = Product.find(good[0])
+    %fieldset
+      %li
+        %h6= label_tag item.name
+        %br
+        %h6= good[1]
+        - @sub += item.price * good[1]
+  %br
+  %h4
+    = "$#{@sub}"
+  %h2 Customer Entry
+  %fieldset
+    = form_tag bill_path, :method => :post do
+      = text_field_tag :first_name, "", {placeholder: "First Name"}
+      = text_field_tag :last_name, "", {placeholder: "Last Name"}
+      = submit_tag :Buy

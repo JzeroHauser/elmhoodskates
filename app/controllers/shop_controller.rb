@@ -2,7 +2,7 @@ class ShopController < ApplicationController
   def index
     #@products = Product.all
     @products = Product.order(:category_id)
-    @categories = Category.all
+    @categories = Category.all  
   end
 
   def categories

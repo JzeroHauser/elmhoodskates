@@ -7,7 +7,8 @@ Elmhoodskates::Application.routes.draw do
   match "order/purchase" => "order#purchase", as: :purchase
   match "order/cancel" => "order#cancel", as: :cancel
   match "shop/category" => "shop#categories", as: :category, via: :post
-
+  match "order/bill" => "order#bill", as: :bill, via: :post
+  match "order/check" => "order#check", as: :check
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

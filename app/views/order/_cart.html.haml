@@ -19,4 +19,4 @@
           = Product.find(boom[0]).name
           %br
           = link_to "remove from cart", cancel_path(id: boom[0]), :method=> :post
-= link_to "Checkout", check_path unless !items
+= link_to "Checkout", check_path

@@ -9,4 +9,15 @@ class OrderController < ApplicationController
     session[:shopping_cart].remove_good params[:id]
     redirect_to :root
   end
+
+  def check
+      @goods = session[:shopping_cart].goods unless session[:shopping_cart].goods.nil?
+      @sub = 0
+  end
+
+  def bill
+     @goods = session[:shopping_cart].goods unless session[:shopping_cart].goods.nil?
+     @run = 0
+  end
 end
+
