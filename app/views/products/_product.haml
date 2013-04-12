@@ -2,7 +2,9 @@
   %b= product.name
   = " $#{product.price}"
   \| 
-  - if product.quantity_on_hand < 1 
+  - if product.quantity_on_hand == 0 
     Out of stock
   - else
     = link_to "put in cart", purchase_path(id: product, :q => '1'), :method=> :post
+    \| 
+    = link_to "remove from cart", cancel_path(id: product), :method=> :post

@@ -4,4 +4,9 @@ class OrderController < ApplicationController
     session[:shopping_cart].add_good params[:id], params[:q]
     redirect_to :back
   end
+
+  def cancel
+    session[:shopping_cart].remove_good params[:id]
+    redirect_to :back
+  end
 end

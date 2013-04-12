@@ -23,4 +23,13 @@ class Shopping_cart
     false
   end
 
-end
+  def remove_good id
+    counter = 0
+    @goods.each do |g|
+      if g[0] == id
+        @goods.delete_at(counter)
+      end
+    counter += 1
+    end
+  end
+end 

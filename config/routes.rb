@@ -5,7 +5,7 @@ Elmhoodskates::Application.routes.draw do
 
   root :to => 'shop#index'
   match "order/purchase" => "order#purchase", as: :purchase
-
+  match "order/cancel" => "order#cancel", as: :cancel
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
