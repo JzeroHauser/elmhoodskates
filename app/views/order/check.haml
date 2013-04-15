@@ -4,16 +4,27 @@
     - item = Product.find(good[0])
     %fieldset
       %li
-        %h6= label_tag item.name
-        %br
-        %h6= good[1]
+        %p= label_tag item.name
+        %p= good[1]
         - @sub += item.price * good[1]
   %br
-  %h4
+  %p
     = "$#{@sub}"
   %h2 Customer Entry
   %fieldset
     = form_tag bill_path, :method => :post do
+      %p First Name
       = text_field_tag :first_name, "", {placeholder: "First Name"}
+      %p Last Name
       = text_field_tag :last_name, "", {placeholder: "Last Name"}
+      %p Street
+      = text_field_tag :street, "", {placeholder: "Street"}
+      %p City
+      = text_field_tag :city, "", {placeholder: "City"}
+      %p Provinces
+      = select_tag :province, options_for_select(['Manitoba', 'Saskatchewan'])
+      %p Postal Code
+      = text_field_tag :postal_code, "", {placeholder: "Postal Code"}
+      %p Credit card
+      = text_field_tag :credit_card, "", {placehoder: "credit card"}
       = submit_tag :Buy

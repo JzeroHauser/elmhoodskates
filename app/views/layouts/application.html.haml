@@ -20,6 +20,9 @@
       %section
         = render 'form'
         = link_to "Show all products", :root
+        = form_tag finder_path, :method => :get do
+          = text_field_tag :product, "", {placeholder: "Search"}
+          = submit_tag("search")
       %section
         = yield 
       %aside

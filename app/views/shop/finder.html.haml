@@ -1,0 +1,5 @@
+%ul
+  - if @products.empty?
+    %li None available
+  - else
+    = render @products

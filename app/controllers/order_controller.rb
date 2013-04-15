@@ -17,7 +17,14 @@ class OrderController < ApplicationController
 
   def bill
      @goods = session[:shopping_cart].goods unless session[:shopping_cart].goods.nil?
-     @run = 0
+     @run = 0     
+     #@province = Province.where("name LIKE ?" ,"#{params[:province]}")
+     @customer = Customer.create(:address => params[:street],
+                                    :city => params[:city],
+                                    :first_name => params[:first_name],
+                                    :last_name => params[:last_name],
+                                    :postal_code => params[:postal_code])
+                                    #:province_id => @province.id)
   end
 end
 

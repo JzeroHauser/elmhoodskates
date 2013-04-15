@@ -7,9 +7,11 @@
       = good[1]
       X
       = item.price
-      /:
-      = good[0] * item.price
+      is
+      =  good[1].to_f.round(2) * item.price.to_f.round(2) 
       - @run += good[1] * item.price
+  %p= "#{params[:first_name]} #{params[:last_name]}"
+  %p= " #{params[:street]} #{params[:city]} #{params[:province]}"
   %li
     - gst = 0.07
     - pst = 0.05
@@ -17,11 +19,9 @@
     - gst_amount = (sub_total * gst).round(2)
     - pst_amount = (sub_total * pst).round(2)
     - final_total = sub_total + pst_amount + gst_amount
-  %h1= "Sub Total: #{sub_total}"
-  %br
-  %h1= "PST #{pst * 100}%: $#{pst_amount} " 
-  %br
-  %h1= "PST #{gst * 100}%: $#{gst_amount} "
-  %br
-  %h1= "Grand Total: $#{final_total}"
-- session.delete(:shopping_cart)
+  %fieldset
+    %h1= "Sub Total: #{sprintf("$%.2f", sub_total)}" 
+    %h1= "PST #{(pst * 100).round(2)}%: #{sprintf("$%.2f", pst_amount)} " 
+    %h1= "GST #{(gst * 100).round(2)}%: #{sprintf("$%.2f", gst_amount)} "
+    %h1= "Grand Total: #{sprintf("$%.2f",final_total)} "
+/ - session.delete(:shopping_cart)
