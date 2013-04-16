@@ -9,7 +9,7 @@ Elmhoodskates::Application.routes.draw do
   match "shop/category" => "shop#categories", as: :category, via: :post
   match "order/bill" => "order#bill", as: :bill, via: :post
   match "order/check" => "order#check", as: :check
-  match "shop/finder/" => "shop#finder", as: :finder, via: :get
+  match "shop/finder" => "shop#finder", as: :finder, via: :get
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

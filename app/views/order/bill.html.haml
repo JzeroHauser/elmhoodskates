@@ -3,7 +3,7 @@
   - @goods.each do |good|
     %li
       - item = Product.find good[0]
-      = "#{item.name}--->"
+      = "#{item.name}" + "-" * (25 - item.name.size) + ">"
       = good[1]
       X
       = item.price
