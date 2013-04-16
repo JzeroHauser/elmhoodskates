@@ -10,8 +10,12 @@
       is
       =  good[1].to_f.round(2) * item.price.to_f.round(2) 
       - @run += good[1] * item.price
-  %p= "#{params[:first_name]} #{params[:last_name]}"
-  %p= "#{params[:street]} #{params[:city]} #{@customer.province.name}"
+  %h2
+  %fieldset
+    %p= "#{params[:first_name]} #{params[:last_name]}"
+    %p= "#{@customer.province.name} #{params[:city]}"
+    %p= "#{params[:street]} #{params[:postal_code]}"
+    %p= "#{params[:credit_card]}"
   %li
     - gst = @gst
     - pst = @pst
@@ -22,9 +26,9 @@
     - hst_amount = (sub_total * hst).round(2) 
     - final_total = sub_total + gst_amount + pst_amount + hst_amount
   %fieldset
-    %h1= "Sub Total: #{sprintf("$%.2f", sub_total)}" 
-    %h1= "PST #{(pst * 100).round(2)}%: #{sprintf("$%.2f", pst_amount)} " unless gst.zero?
-    %h1= "GST #{(gst * 100).round(2)}%: #{sprintf("$%.2f", gst_amount)} " unless pst.zero?
-    %h1= "HST #{(hst * 100).round(2)}%: #{sprintf("$%.2f", hst_amount)} " unless hst.zero?
+    %h2= "Sub Total: #{sprintf("$%.2f", sub_total)}" 
+    %h2= "PST #{(pst * 100).round(2)}%: #{sprintf("$%.2f", pst_amount)} " unless gst.zero?
+    %h2= "GST #{(gst * 100).round(2)}%: #{sprintf("$%.2f", gst_amount)} " unless pst.zero?
+    %h2= "HST #{(hst * 100).round(2)}%: #{sprintf("$%.2f", hst_amount)} " unless hst.zero?
     %h1= "Grand Total: #{sprintf("$%.2f",final_total)} "
 - session.delete(:shopping_cart)
