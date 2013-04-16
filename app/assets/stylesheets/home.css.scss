@@ -70,8 +70,11 @@ ul
 	}
 
 	aside
-	{
-		width: 30%;
+	{ 
+		overflow: auto;
+		position: fixed;
+		left: 778px;
+		width: 240px;
 		background: #22ff22;
 		height: 100%;
 	}
