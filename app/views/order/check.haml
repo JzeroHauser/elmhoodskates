@@ -14,17 +14,17 @@
   %fieldset
     = form_tag bill_path, :method => :post do
       %p First Name
-      = text_field_tag :first_name, "", {placeholder: "First Name"}
+      = text_field_tag :first_name, "", {placeholder: "First Name", :required => true}
       %p Last Name
-      = text_field_tag :last_name, "", {placeholder: "Last Name"}
+      = text_field_tag :last_name, "", {placeholder: "Last Name", :required => true}
       %p Street
-      = text_field_tag :street, "", {placeholder: "Street"}
+      = text_field_tag :street, "", {placeholder: "Street", :required => true}
       %p City
-      = text_field_tag :city, "", {placeholder: "City"}
+      = text_field_tag :city, "", {placeholder: "City", :required => true}
       %p Provinces
-      = select_tag :province, options_for_select(['Manitoba', 'Saskatchewan'])
+      = select_tag :province, options_for_select(@provinces)
       %p Postal Code
-      = text_field_tag :postal_code, "", {placeholder: "Postal Code"}
+      = text_field_tag :postal_code, "", {placeholder: "Postal Code", :required => true}
       %p Credit card
-      = text_field_tag :credit_card, "", {placehoder: "credit card"}
+      = text_field_tag :credit_card, "", {placehoder: "credit card", :required => true}
       = submit_tag :Buy

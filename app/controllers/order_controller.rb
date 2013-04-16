@@ -11,6 +11,7 @@ class OrderController < ApplicationController
   end
 
   def check
+      @provinces = Province.all.collect {|p| [ p.name, p.id ] }
       @goods = session[:shopping_cart].goods unless session[:shopping_cart].goods.nil?
       @sub = 0
   end
@@ -18,13 +19,20 @@ class OrderController < ApplicationController
   def bill
      @goods = session[:shopping_cart].goods unless session[:shopping_cart].goods.nil?
      @run = 0     
-     #@province = Province.where("name LIKE ?" ,"#{params[:province]}")
      @customer = Customer.create(:address => params[:street],
                                     :city => params[:city],
                                     :first_name => params[:first_name],
                                     :last_name => params[:last_name],
-                                    :postal_code => params[:postal_code])
-                                    #:province_id => @province.id)
+                                    :postal_code => params[:postal_code],
+                                    :province_id => params[:province])
+     @gst = @customer.province.gst
+     @pst = @customer.province.pst
+     @hst = @customer.province.hst
+     @order = Order.create(:status => 'ordered',
+                           :customer_id => @customer.id,
+                           :gst => @gst,
+                           :pst => @pst,
+                           :hst => @hst)
   end
 end
 
